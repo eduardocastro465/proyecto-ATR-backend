@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.17.1",
-    "@imgly/background-removal": "^1.5.7",
+    "@imgly/background-removal": "^1.6.0",
     "@imgly/background-removal-node": "^1.4.5",
     "axios": "^1.7.7",
     "backendatr": "file:",
