@@ -18,7 +18,7 @@
     "@elastic/elasticsearch": "^8.17.1",
     "@imgly/background-removal": "^1.5.7",
     "@imgly/background-removal-node": "^1.4.5",
-    "axios": "^1.7.7",
+    "axios": "^1.8.3",
     "backendatr": "file:",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
