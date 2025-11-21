@@ -5,6 +5,7 @@ router.post("/", ctrl.crearPost);
 router.get("/aprobados", ctrl.listarPosts);
 router.get("/no-aprobados",ctrl.listarPostsNoAprobados)
 router.post("/likes", ctrl.darLike);
+// router.post("mis-likes",ctrl.misLikes)
 router.post("/comentarios", ctrl.comentar);
 router.get("/comentarios/:postId", ctrl.listarComentarios);
 router.post("/guardados", ctrl.guardarPost);
@@ -14,5 +15,6 @@ router.delete("/guardados", ctrl.quitarGuardado);
 router.get("/guardados/:usuariaId", ctrl.misGuardados);
 router.post("/:id/aprobar", ctrl.aprobarPost);
 router.delete("/:id", ctrl.eliminarPost);
-
+// En routes/social.js
+router.get("/likes/:usuariaId", ctrl.misLikes);
 module.exports = router;

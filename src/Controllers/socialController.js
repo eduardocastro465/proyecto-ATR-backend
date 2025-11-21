@@ -145,3 +145,16 @@ exports.misGuardados = async (req, res) => {
     res.status(500).json({ error: e.message });
   }
 };
+
+
+exports.misLikes = async (req, res) => {
+  try {
+    const likes = await Like.find({ usuariaId: req.params.usuariaId })
+      .populate("postId")
+      .populate("usuariaId");
+
+    res.json(likes);
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+};

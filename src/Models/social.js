@@ -12,25 +12,25 @@ const PostSchema = new mongoose.Schema({
 
 /* ---------- LIKE ---------- */
 const LikeSchema = new mongoose.Schema({
-  postId:   { type: mongoose.Schema.Types.ObjectId, ref: "Posts", required: true },
-  usuariaId:{ type: mongoose.Schema.Types.ObjectId, ref: "Usuarios", required: true },
-  fecha:    { type: Date, default: Date.now }
+  postId:    { type: mongoose.Schema.Types.ObjectId, ref: "Post", required: true },
+  usuariaId: { type: mongoose.Schema.Types.ObjectId, ref: "Usuarios", required: true },
+  fecha:     { type: Date, default: Date.now }
 });
 LikeSchema.index({ postId: 1, usuariaId: 1 }, { unique: true });
 
 /* ---------- COMENTARIO ---------- */
 const ComentarioSchema = new mongoose.Schema({
-  postId:   { type: mongoose.Schema.Types.ObjectId, ref: "Post", required: true },
-  usuariaId:{ type: mongoose.Schema.Types.ObjectId, ref: "Usuarios", required: true },
-  texto:    { type: String, maxlength: 300, required: true },
-  fecha:    { type: Date, default: Date.now }
+  postId:    { type: mongoose.Schema.Types.ObjectId, ref: "Post", required: true },
+  usuariaId: { type: mongoose.Schema.Types.ObjectId, ref: "Usuarios", required: true },
+  texto:     { type: String, maxlength: 300, required: true },
+  fecha:     { type: Date, default: Date.now }
 });
 
 /* ---------- GUARDADO ---------- */
 const GuardadoSchema = new mongoose.Schema({
-  usuariaId:{ type: mongoose.Schema.Types.ObjectId, ref: "Usuarios", required: true },
-  postId:   { type: mongoose.Schema.Types.ObjectId, ref: "Post", required: true },
-  fecha:    { type: Date, default: Date.now }
+  usuariaId: { type: mongoose.Schema.Types.ObjectId, ref: "Usuarios", required: true },
+  postId:    { type: mongoose.Schema.Types.ObjectId, ref: "Post", required: true },
+  fecha:     { type: Date, default: Date.now }
 });
 GuardadoSchema.index({ usuariaId: 1, postId: 1 }, { unique: true });
 
