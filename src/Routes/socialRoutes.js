@@ -4,7 +4,6 @@ const express = require('express');
 const router = express.Router();
 const postController = require('../controllers/socialController');
 
-// Rutas para posts completos
 router.get('/posts-completos', postController.listarPostsCompletos);
 router.get('/posts-aprobados', postController.listarPostsAprobados);
 router.get('/posts-pendientes', postController.listarPostsPendientes);
@@ -12,7 +11,6 @@ router.get('/posts-usuario/:usuariaId', postController.listarPostsPorUsuaria);
 router.get('/posts-con-like/:usuariaId', postController.postsConLikeDeUsuaria);
 router.get('/post-completo/:id', postController.detallePostCompleto);
 
-// Rutas existentes (mantener estas)
 router.post('/crear', postController.crearPost);
 router.get('/:id', postController.detallePostById);
 router.get('/', postController.listarPosts);
