@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const upload = require("../middleware/multer");
 
-const postController = require('../controllers/social_Controller');
+const postController = require('../controllers/social_controller');
 
 router.get('/posts-completos', postController.listarPostsCompletos);
 router.get('/posts-aprobados', postController.listarPostsAprobados);
