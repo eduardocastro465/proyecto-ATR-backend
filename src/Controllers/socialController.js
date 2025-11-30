@@ -11,7 +11,6 @@ cloudinary.config({
 });
 
 /* ---------- POSTS ---------- */
-/* ---------- POSTS ---------- */
 exports.crearPost = async (req, res) => {
   console.log("=== INICIANDO crearPost ===");
   console.log("📥 Headers:", req.headers);

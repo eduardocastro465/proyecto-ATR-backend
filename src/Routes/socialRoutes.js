@@ -2,6 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
+const upload = require("../middleware/multer");
+
 const postController = require('../controllers/socialController');
 
 router.get('/posts-completos', postController.listarPostsCompletos);
@@ -11,7 +13,7 @@ router.get('/posts-usuario/:usuariaId', postController.listarPostsPorUsuaria);
 router.get('/posts-con-like/:usuariaId', postController.postsConLikeDeUsuaria);
 router.get('/post-completo/:id', postController.detallePostCompleto);
 
-router.post('/crear', postController.crearPost);
+router.post('/crear',  upload.fields([{ name: "imagenes", maxCount: 10 }]),postController.crearPost);
 router.get('/:id', postController.detallePostById);
 router.get('/', postController.listarPosts);
 router.get('/no-aprobados', postController.listarPostsNoAprobados);
